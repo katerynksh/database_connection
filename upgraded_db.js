@@ -59,7 +59,8 @@ async function addElephant(name, age, breed, weight, food, notes) {
 // 3. SELECT — Перегляд усіх cлоників у базі даних
 async function getAllElephants() {
    const res = await pool.query('SELECT * FROM elephants ORDER BY id ASC');
-   console.log('✨ List of all elephants:', res.rows);
+   console.log('✨ List of all elephants:');
+   console.table(res.rows);
 }
 
 async function updateElephantInfo(id, updates) {
